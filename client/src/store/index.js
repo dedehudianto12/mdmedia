@@ -36,7 +36,7 @@ export default new Vuex.Store({
           })
         })
         .catch(err => {
-          console.log(err.response.data.message)
+          console.log(err.message)
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -112,7 +112,7 @@ export default new Vuex.Store({
           })
         })
         .catch(err => {
-          console.log(err.response.data.message)
+          console.log(err.message)
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
