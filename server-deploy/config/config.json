@@ -5,5 +5,19 @@
     "database": "mdmedia",
     "host": "127.0.0.1",
     "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "Bloodfire12",
+    "database": "mdmedia1",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "qymyfidtqkqqve",
+    "password": "8e72ae3832922724e337a06721cfde7e376125ad950ac4b43716452ecde48bce",
+    "database": "d7m88lpbg6olgj",
+    "host": "ec2-54-197-48-79.compute-1.amazonaws.com",
+    "dialect": "postgres"
   }
 }
