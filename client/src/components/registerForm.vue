@@ -1,5 +1,7 @@
 <template>
-  <div style="width: 30%;margin: auto; margin-top: 10%">
+  <div
+    style="width: 28%;margin: auto; margin-top: 10%; border: 1px black solid; padding: 10px; border-radius: 10px;color: white; background-color: black"
+  >
     <h1 style="text-align: center">Register</h1>
     <form>
       <div class="form-group">
@@ -31,9 +33,11 @@
           id="exampleInputPassword1"
         />
       </div>
-      <button type="submit" class="btn btn-primary" @click="registerForm()">Register</button>
-      <span>or</span>
-      <a @click.prevent="changeForm()" href>Login</a>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary pt-0 mr-2" @click="registerForm()">Register</button>
+        <span>or</span>
+        <a class="ml-2" @click.prevent="changeForm()" href>Login</a>
+      </div>
     </form>
   </div>
 </template>

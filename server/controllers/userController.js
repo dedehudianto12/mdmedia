@@ -52,9 +52,9 @@ class UserController {
                             message: 'wrong email / password'
                         })
                     } else {
-                        const val = Math.floor(100000 + Math.random() * 900000);
+                        const val = Math.floor(100000 + Math.random() * 900000)
                         sendEmail(user.email, val)
-                        realVal.user.email = { emil: user.email, payload: val }
+                        realVal[user.email] = { email: user.email, payload: val }
                         const token = generateToken(user)
                         res.status(200).json({
                             status: 'Success',

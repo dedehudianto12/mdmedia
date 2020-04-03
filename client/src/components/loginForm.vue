@@ -1,5 +1,7 @@
 <template>
-  <div style="width: 30%;margin: auto; margin-top: 10%">
+  <div
+    style="width: 28%;margin: auto; margin-top: 10%; border: 1px black solid; padding: 10px; border-radius: 10px;color: white; background-color: black"
+  >
     <h1 style="text-align: center">Login</h1>
     <form>
       <div class="form-group">
@@ -20,10 +22,11 @@
         <label for="exampleInputPassword1">Password</label>
         <input v-model="password" type="password" class="form-control" id="exampleInputPassword1" />
       </div>
-      <button @click="loginForm" type="submit" class="btn btn-primary">Login</button>
-      <span>or</span>
-      <a @click.prevent="changeForm()" href>Register</a>
-      <!-- <button type="button" class="btn btn-primary" @click="changeForm()">Register</button> -->
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-primary pt-0 mr-2" @click="loginForm" type="submit">Login</button>
+        <span>or</span>
+        <a class="ml-2" @click.prevent="changeForm()" href>Register</a>
+      </div>
     </form>
   </div>
 </template>

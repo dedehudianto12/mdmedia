@@ -1,17 +1,21 @@
 <template>
-  <div style="width: 30%;margin: auto; margin-top: 10%">
-    <label for="exampleInputEmail1">Validation Code</label>
+  <div
+    style="width: 28%;margin: auto; margin-top: 10%; border: 1px black solid; padding: 10px; border-radius: 10px;color: white; background-color: black"
+  >
+    <h1 style="text-align: center" class="mb-3" for="exampleInputEmail1">Validation Code</h1>
     <form>
       <div class="form-group">
         <input v-model="validation" @change="lengthValidation" type="number" class="form-control" />
       </div>
-      <button @click="validateCode" type="submit" class="btn btn-primary">Validate</button>
-      <button
-        v-if="retry || this.$store.state.retry"
-        @click="retryButton"
-        type="submit"
-        class="btn btn-danger"
-      >Send Code Again</button>
+      <div class="d-flex justify-content-center">
+        <button @click="validateCode" type="submit" class="btn btn-primary mr-2">Validate</button>
+        <button
+          v-if="retry || this.$store.state.retry"
+          @click="retryButton"
+          type="submit"
+          class="btn btn-danger"
+        >Send Code Again</button>
+      </div>
     </form>
   </div>
 </template>

@@ -16,8 +16,8 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../components/registerForm.vue')
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/otp',
+    name: 'Otp',
     beforeEnter: (to, from, next) => {
       const valid = localStorage.getItem('access_token')
       if (valid) {

@@ -6,7 +6,8 @@ Vue.use(Vuex)
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
-const url = `http://localhost:3000`
+// const url = `http://localhost:3000`
+const url = `https://serene-fjord-43137.herokuapp.com`
 
 export default new Vuex.Store({
   state: {
@@ -25,9 +26,8 @@ export default new Vuex.Store({
         data: payload
       })
         .then(({ data }) => {
-          console.log(data)
           localStorage.setItem('access_token', data.payload)
-          router.push('/about')
+          router.push('/otp')
           Swal.fire({
             icon: 'success',
             title: data.message,
@@ -36,7 +36,6 @@ export default new Vuex.Store({
           })
         })
         .catch(err => {
-          console.log(err.message)
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -51,11 +50,15 @@ export default new Vuex.Store({
         data: payload
       })
         .then(({ data }) => {
-          console.log(data)
           router.push('/')
+          Swal.fire({
+            icon: 'success',
+            title: data.message,
+            showConfirmButton: false,
+            timer: 1500
+          })
         })
         .catch(err => {
-          console.log(err.response.data.message)
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -75,7 +78,6 @@ export default new Vuex.Store({
         .then(({ data }) => {
           localStorage.setItem('code', true)
           router.push('/dashboard')
-          console.log(data)
           Swal.fire({
             icon: 'success',
             title: data.message,
@@ -86,7 +88,6 @@ export default new Vuex.Store({
         .catch(err => {
           localStorage.setItem('retry', true)
           commit('ADD_RETRY', true)
-          console.log(err.response.data.message)
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -103,7 +104,6 @@ export default new Vuex.Store({
         }
       })
         .then(({ data }) => {
-          console.log(data)
           Swal.fire({
             icon: 'success',
             title: data.message,
@@ -112,7 +112,6 @@ export default new Vuex.Store({
           })
         })
         .catch(err => {
-          console.log(err.message)
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -130,7 +129,6 @@ export default new Vuex.Store({
         }
       })
         .then(({ data }) => {
-          console.log(data)
           Swal.fire({
             icon: 'success',
             title: data.message,
@@ -139,7 +137,6 @@ export default new Vuex.Store({
           })
         })
         .catch(err => {
-          console.log(err.response.data.message)
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
